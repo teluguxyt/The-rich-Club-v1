@@ -1,0 +1,114 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000;
+    color: rgb(255, 255, 255);
+    padding: 15px 15px;
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #292929;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: 2s ease-in-out;
+}
+.card img{
+    width: 100%;
+    height: 120px;
+    
+}
+input{
+    width: 80%;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    text-align: center;
+}
+button{
+    width: 50%;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    text-align: center;
+    cursor: pointer;
+    background: #ff0000;
+    color: #fff;
+    font-weight: 600;
+}
+.social{
+    display: flex;
+    gap: 20px;
+    bottom: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.social a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+.message{
+    color: #ff0000;
+}
+.social i{
+    transition: 0.5s ease-in-out;
+    font-size: 25px;
+}
+.social i:hover{
+    color: #ff0000;
+}
+
+/* Animation */ 
+
+.card:hover{
+    box-shadow: #ff000080 0px 0px 25px;
+}
+#main{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+}
+#main img{
+    width: auto;
+    height: 10vh;
+}
+.card-v1{
+    height: 30vh;
+    width: 100%;
+    background: #0f0f0f;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: 2s ease-in-out;
+    color: #fff;
+    margin-bottom: 15px;
+}
