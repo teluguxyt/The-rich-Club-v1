@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Rich Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav id="main">
+      <img src="../images/logo.png" alt="" />
+    </nav>
+    <div class="card-v1">
+      <p><span id="period-number">loading</span></p>
+      <p>Timer <span id="timer">00:00</span></p>
+    </div>
+    <div class="card-v1">
+      <div id="numberDiv" class="result output"></div>
+      <div id="oddEvenDiv" class="result output"></div>
+      <div id="colorDiv" class="result output"></div>
+    </div>
+    <button id="generateButton">Result</button>
+    <div class="social">
+      <a href="https://t.me/The_Rich_Club_1" blank target="_blank"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://youtube.com/@therichclub14?si=_aYjnukEIezM2pBI" blank target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <script>
+      let clickCount = 0; // Counter to track the number of clicks
+
+      // Function to generate a random number between 0 and 9
+      function getRandomNumber() {
+        return Math.floor(Math.random() * 10); // Random number between 0 and 9
+      }
+
+      // Function to get the color based on a random choice (green or red)
+      function getRandomColor() {
+        return Math.random() > 0.5 ? "green" : "red"; // Randomly choose green or red
+      }
+
+      // Function to check if a number is odd or even
+      function checkOddEven(number) {
+        return number % 2 === 0 ? "Big" : "Small"; // Check if number is even or odd
+      }
+
+      // Event listener for the button click
+      document
+        .getElementById("generateButton")
+        .addEventListener("click", function () {
+          clickCount++; // Increment click count
+
+          if (clickCount === 1) {
+            // First click: Instant result
+            const randomNumber = getRandomNumber();
+            const oddEven = checkOddEven(randomNumber);
+            const color = getRandomColor();
+
+            // Display the results instantly in separate divs
+            document.getElementById(
+              "numberDiv"
+            ).textContent = `Number: ${randomNumber}`;
+            document.getElementById(
+              "oddEvenDiv"
+            ).textContent = `Big/Small: ${oddEven}`;
+            document.getElementById("colorDiv").textContent = `Color: ${color}`;
+
+            // Apply the color class (green or red) to the color div
+            document.getElementById("colorDiv").className =
+              "result output " + color;
+          } else if (clickCount === 2) {
+            // Second click: Delay for 20 seconds before displaying the result
+            setTimeout(function () {
+              const randomNumber = getRandomNumber();
+              const oddEven = checkOddEven(randomNumber);
+              const color = getRandomColor();
+
+              // Display the results after 20 seconds in separate divs
+              document.getElementById(
+                "numberDiv"
+              ).textContent = `Number: ${randomNumber}`;
+              document.getElementById(
+                "oddEvenDiv"
+              ).textContent = `Odd/Even: ${oddEven}`;
+              document.getElementById(
+                "colorDiv"
+              ).textContent = `Color: ${color}`;
+
+              // Apply the color class (green or red) to the color div
+              document.getElementById("colorDiv").className =
+                "result output " + color;
+            }, 20000); // 20 seconds (20000 milliseconds)
+          }
+        });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
